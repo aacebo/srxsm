@@ -4,12 +4,21 @@
   "description": "a vanilla javascript reactive state management system",
   "main": "index.js",
   "scripts": {
-    "build": "ts-node ./src/index.ts"
+    "start": "ts-node ./demo.ts",
+    "build": "rimraf dist && tsc",
+    "test": "jest"
   },
   "author": "Alexander Acebo",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "rxjs": "^6.5.5"
+  },
   "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/lodash": "^4.14.150",
+    "jest": "^25.4.0",
+    "ts-jest": "^25.4.0",
     "ts-node": "^8.9.0",
     "typescript": "^3.8.3"
   }
