@@ -1,4 +1,4 @@
-import { State, createGetter } from './src';
+import { State, createGetter, createFeatureGetter } from './src';
 
 interface IState {
   readonly test: number;
@@ -8,7 +8,7 @@ interface IState {
 const state = new State<IState>({ test: 1, prop: 'pop' });
 
 const getState = createGetter((state: IState) => state);
-const getTest = createGetter(getState, state => state.test);
+const getTest = createFeatureGetter<number>('test');
 const getProp = createGetter(getState, state => state.prop);
 const getTestProp = createGetter(getTest, getProp, (test, prop) => ({ test, prop }));
 

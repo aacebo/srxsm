@@ -1,3 +1,5 @@
-export function createFeatureGetter<T>(propName: keyof T) {
-  return (state: T) => state[propName];
+import { Getter } from './getter.model';
+
+export function createFeatureGetter<Result>(propName: string): Getter<any, Result> {
+  return (state: any) => state[propName];
 }
